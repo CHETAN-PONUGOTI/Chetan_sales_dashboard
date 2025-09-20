@@ -1,0 +1,21 @@
+.date-picker-input {
+  padding: 8px 12px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  border-radius: 4px;
+  width: 130px;
+  text-align: center;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+
+/* Mimic Material-UI's focus outline */
+.date-picker-input:focus {
+  outline: none;
+  border: 2px solid #1976d2; /* Default MUI primary blue color */
+}
+
+.date-picker-input:hover {
+  border-color: #000;
+}
