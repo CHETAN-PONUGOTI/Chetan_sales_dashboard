@@ -1,21 +1,28 @@
 import React from 'react';
-import { Card, CardContent, Typography, Box } from '@mui/material';
+import { Paper, Typography, Box } from '@mui/material';
 
 const MetricCard = ({ title, value, icon, format = (v) => v }) => {
   return (
-    <Card sx={{ minWidth: 275, textAlign: 'center', height: '100%' }}>
-      <CardContent>
-        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1 }}>
-          {icon}
-          <Typography sx={{ fontSize: 18, ml: 1 }} color="text.secondary" gutterBottom>
-            {title}
-          </Typography>
-        </Box>
-        <Typography variant="h4" component="div">
-          {format(value)}
+    // STYLING: Added overflow: 'hidden' to prevent scrollbars
+    <Paper 
+      elevation={3} 
+      sx={{ 
+        p: 3, 
+        textAlign: 'center', 
+        height: '100%', 
+        overflow: 'hidden' 
+      }}
+    >
+      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 1.5 }}>
+        {icon}
+        <Typography sx={{ fontSize: 20, ml: 1.5 }} color="text.secondary" gutterBottom>
+          {title}
         </Typography>
-      </CardContent>
-    </Card>
+      </Box>
+      <Typography variant="h4" component="div" sx={{ fontWeight: 'bold' }}>
+        {format(value)}
+      </Typography>
+    </Paper>
   );
 };
 
