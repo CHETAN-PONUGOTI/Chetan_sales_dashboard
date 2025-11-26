@@ -18,9 +18,7 @@ exports.getAnalytics = async (req, res) => {
       },
     };
 
-    // --- Aggregation Pipelines ---
-
-    // 1. Key Metrics (Total Revenue, Total Sales, Avg Order Value)
+    // key Metrics (Total Revenue, Total Sales, Avg Order Value)
     const keyMetrics = await Sale.aggregate([
       matchStage,
       {
@@ -41,7 +39,7 @@ exports.getAnalytics = async (req, res) => {
       },
     ]);
 
-    // 2. Top 5 Selling Products
+    //Top 5 Selling Products
     const topProducts = await Sale.aggregate([
       matchStage,
       {
@@ -69,7 +67,7 @@ exports.getAnalytics = async (req, res) => {
       },
     ]);
 
-    // 3. Sales by Region
+    // sales by Region
     const salesByRegion = await Sale.aggregate([
         matchStage,
         {
@@ -91,7 +89,7 @@ exports.getAnalytics = async (req, res) => {
     ]);
 
 
-    // 4. Sales by Category
+    // Sales by Category
     const salesByCategory = await Sale.aggregate([
         matchStage,
         {
